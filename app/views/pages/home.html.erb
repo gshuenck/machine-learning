@@ -1,0 +1,13 @@
+<%= turbo_stream_from :ai_messages %>
+
+
+<div>
+  <h1 class="font-bold text-4xl">My Custom AI Model</h1>
+  <p>This is a website for my AI Model</p>
+  <br/>
+  <%= link_to "Talk to AI", new_chat_message_path, class: "bg-green-500 p-2 rounded-full text-lg text-blue-100 ", data: { turbo_frame: :chat_messages }%>
+  <%= link_to "Train Model", trainings_path, class: "bg-blue-500 p-2 rounded-full text-lg text-blue-100 "%>
+  <br/>
+  <%= turbo_frame_tag :chat_messages %>
+  <div id="ai-messages"> </div>
+</div>
